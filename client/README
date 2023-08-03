@@ -1,0 +1,9 @@
+Sezione client del progetto torbidimetro. 
+
+Le funzionalità implementate permettono al torbidimetro dì: 
+- sapere la torbidita dell'acqua tramite sensori CQRobot Ocean VL53L1X
+
+I dati raccolti vengono mandati a un server.
+visitare la sezione server di questa repository per maggiori informazioni. 
+
+In aggiornamento....
