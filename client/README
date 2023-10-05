@@ -1,9 +1,8 @@
-Sezione client del progetto torbidimetro. 
+Guida all'uso per il software del sistema di rilevamento della torbidità dell'acqua. 
 
-Le funzionalità implementate permettono al torbidimetro dì: 
-- sapere la torbidita dell'acqua tramite sensori CQRobot Ocean VL53L1X
+Per iniziare...
+Come prima cosa è necessario installare il sistema operativo raspbian sulla microSD seguento tutti i passaggi. 
+Come nome utente si raccomanda di lasciare "pi". 
 
-I dati raccolti vengono mandati a un server.
-visitare la sezione server di questa repository per maggiori informazioni. 
 
-In aggiornamento....
+
