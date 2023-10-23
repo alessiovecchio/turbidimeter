@@ -44,7 +44,7 @@ echo "Install sensor library"
 
 
 echo "Copy startup program in the wittypi AfterStartup script"
-sudo cp /home/$user/Dektop/progetto/afterStartup.sh /home/$user/wittypi/afterStartup.sh
+sudo cp /home/$user/Desktop/progetto/afterStartup.sh /home/$user/wittypi/afterStartup.sh
 
 echo "please, reboot the system"
 sleep 5
