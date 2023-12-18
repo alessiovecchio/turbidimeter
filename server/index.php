@@ -210,7 +210,7 @@ if (!(isset($_SESSION['utente_registrato']) && $_SESSION['utente_registrato'] ==
 			</div>
 			<div id="map"></div>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmiB9vQpDpsdiIzVDpPIC4xZNBvOK0JD4&callback=initMap&v=weekly"
+      src="Inserire chiave google API maps per visualizzare la mappa"
       defer
     ></script>
 		</div>
