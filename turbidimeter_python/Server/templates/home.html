@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/Hstyle.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+            <div class="container_home">
+                <h1>Home Page</h1>
+                {%if username%}
+                <p>Hello {{username}}! You are already logged in, <a href="{{ url_for('logout')}}">Logout</a></p>
+                {%else%}
+                <p>Hello! You are not logged in, Please <a href="{{ url_for('login') }}">Login</a> to access the home page or
+                <a href="{{ url_for('register') }}">Register</a> to create an account</p>
+                {%endif%}
+            </div>
+    </div>
+</body>
+</html>

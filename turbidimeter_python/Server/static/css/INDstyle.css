@@ -1,0 +1,249 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    background-color: #333;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 2px;
+    border: none;
+    
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+}
+
+#menuToggle {
+    display: none;
+}
+
+#menuContainer {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    z-index: 1;
+    transition: left 0.3s ease;
+}
+
+#menu {
+    padding: 60px 15px 15px;
+    text-align: center;
+}
+
+#menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#menuToggleLabel {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    color: #fff;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    #menuToggleLabel {
+        display: block;
+    }
+
+    #menuContainer {
+        top: 60px;
+        left: -250px;
+    }
+
+    #menuToggle:checked + #menuContainer {
+        left: 0;
+    }
+}
+  /* Aggiungi stili per il messaggio di benvenuto */
+  #welcomeMessage {
+    font-size: 24px;
+    color: #333;
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.addturbi_container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.addturbi{
+    width: 40%;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+
+.addturbi h2{
+    width: 100%;
+    text-align: center;
+}
+
+#mappa{
+    width: 50%;
+    height: 400px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+
+/* Stili per il form */
+.addturbi form {
+    text-align: center; 
+    width: 51%;
+}
+
+.addturbi label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+.addturbi input {
+    width: 100%; /* Rendi gli input larghi al 100% */
+    padding: 8px; /* Aggiungi spazio interno agli input */
+    margin-bottom: 15px; /* Aggiungi spazio tra gli input */
+    box-sizing: border-box; /* Include il padding e il bordo nel calcolo della larghezza */
+    border: 1px solid #ddd; /* Aggiungi un sottile bordo grigio agli input */
+    border-radius: 4px; /* Aggiungi angoli arrotondati agli input */
+}
+
+.addturbi input[type="submit"] {
+    background-color: #333; /* Cambia il colore di sfondo del pulsante di invio */
+    color: #fff; /* Cambia il colore del testo del pulsante di invio */
+    cursor: pointer;
+}
+
+.addturbi input[type="submit"]:hover {
+    background-color: #555; /* Cambia il colore di sfondo del pulsante di invio al passaggio del mouse */
+}
+
+.container_data{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container_data_form{
+    width: 40%;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    margin-top: 40px;
+}
+
+.container_data_form h1{
+    width: 100%;
+    text-align: center;
+}
+
+.container_data_form form {
+    text-align: center; 
+    width: 51%;
+}
+
+.container_data_form label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+.container_data_form input {
+    width: 100%;
+    padding: 8px; 
+    margin-bottom: 15px; 
+    box-sizing: border-box;
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    text-align: center;
+}
+
+.container_data_form input[type="submit"] {
+    background-color: #333; /* Cambia il colore di sfondo del pulsante di invio */
+    color: #fff; /* Cambia il colore del testo del pulsante di invio */
+    cursor: pointer;
+}
+
+.container_data_form input[type="submit"]:hover {
+    background-color: #555; 
+}
+
+.plot_container{
+    text-align: center;
+    width: 45%;
+    height: 500px;
+}
+
+#plot{
+    width: 100%;
+    border : 1px solid red;
+    height: 400px;
+}
+#myChart{
+    margin-top: 50px;
+}
+
+.check_container{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.modifica_turbi_container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Stili per la tabella */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    th b {
+        display: block;
+        font-weight: normal;
+    }
+
+
+
+

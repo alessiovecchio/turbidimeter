@@ -1,0 +1,21 @@
+{
+    "General": {
+      "user": "your username"
+    },
+
+    "Turbidimeter": {
+      "turbidimeterID": 7,
+      "dataReadInterval": 15, 
+      "numberOfSampling": 8,
+      "mobile": false,
+      "wait": 60,
+      "Latitude": "your latitude",  
+      "Longitude": "your longitude"
+    },
+    "Server": {
+      "ipAddr": "127.0.0.1:5000",
+      "username": "Ettore",
+      "passwordServer": "ricci",
+      "siteName": "your site name"
+    }
+  }

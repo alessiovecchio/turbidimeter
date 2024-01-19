@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/js/animazioni.js"></script>
+    <link rel="stylesheet" href="/static/css/INDstyle.css">
+    <script src="/static/js/Grafico.js"></script>
+
+    <!--Libreria Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <!--Date Adapter-->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3"></script>
+
+
+    <!--Libreria Jquery-->
+    <script   src="https://code.jquery.com/jquery-3.7.1.min.js"   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="   crossorigin="anonymous"></script>
+    
+    <title>Risultati</title>
+</head>
+<body>
+        <header>
+            <label for="menuToggle" id="menuToggleLabel" onclick="toggleMenu()">&#9776; Menu</label>
+        </header>
+
+        <input type="checkbox" id="menuToggle">
+        <div id="menuContainer">
+            <div id="menu">
+                <a href="{{ url_for('logout')}}">Logout</a>
+                <a href="#">Grafico</a>
+                <a href="{{ url_for('index')}}">Home</a>
+                <!-- Aggiungi altri collegamenti alle tue pagine -->
+            </div>
+        </div>
+        <div class="container_data">
+                
+            <div class="container_data_form">
+                <form id="data_form">
+                    <h1>Seleziona l'intervallo</h1>
+                    
+                    <!-- Aggiunto un div per visualizzare i messaggi di errore -->
+                    <div id="errore_formato" style="color: red; margin-bottom: 20px;"></div>
+                  
+                    <label for="turbi">Turbidimetro</label>
+                    <input type="text" placeholder="Turbi Numero" id="turbi_id" required>
+                    <label for="data_inizio">Data di inizio</label>
+                    <input type="text" id="data_inizio" placeholder="Data di inizio" required>
+                    <label for="data_fine">Data di fine</label>
+                    <input type="text" id="data_fine" placeholder="Data di fine" required>
+                    <input type="submit" value="Visualizza">
+                </form>   
+            </div>
+
+                <div class="plot_container">
+                    <canvas id="myChart" width="400" height="200"></canvas>
+                    <canvas id="myChart2" width="400" height="200"></canvas>
+                </div>
+        </div>
+        
+
+</body>
+</html>

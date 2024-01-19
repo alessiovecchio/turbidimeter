@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/INDstyle.css">
+    <script src="/static/js/animazioni.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="/static/js/mappa.js"></script>
+    <!--Libreria Jquery-->
+    <script   src="https://code.jquery.com/jquery-3.7.1.min.js"   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="   crossorigin="anonymous"></script>
+    <!--Libreria Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+   
+    <!--Libreria Mapbox JS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet" />
+    <title>Index</title>
+
+</head>
+<body>
+    <header>
+        <label for="menuToggle" id="menuToggleLabel" onclick="toggleMenu()">&#9776; Menu</label>
+    </header>
+
+    <input type="checkbox" id="menuToggle">
+    <div id="menuContainer">
+        <div id="menu">
+            <a href="{{ url_for('logout')}}">Logout</a>
+            <a href="{{ url_for('dati')}}">Grafico</a>
+            <a href="#">Home</a>
+            <!-- Aggiungi altri collegamenti alle tue pagine -->
+        </div>
+    </div>
+
+    <!-- Messaggio di benvenuto -->
+    {% if username %}
+        <div id="welcomeMessage">Benvenuto, {{ username }}! Siamo felici di averti qui.</div>
+    {% endif %}
+    <div class="addturbi_container">
+        <div class="addturbi">
+            <form id="markerForm" action="{{ url_for('aggiungi_turbi') }}" method="POST">
+                <h2>Aggiungi Turbidimetro</h2>
+                <label for="Latitudine">Latitudine</label><br>
+                <input type="text" name="Latitudine" id="Latitudine" required placeholder="Inserisci la latitudine"><br><br>
+
+                <label for="Longitudine">Longitudine</label><br>
+                <input type="text" name="Longitudine" id="Longitudine" required placeholder="Inserisci la longitudine"><br><br>
+
+                <input type="submit" value="Aggiungi">
+                <hr>
+            </form>
+        </div>
+        <div id="mappa">
+            
+        </div>
+    </div>
+    <div class="modifica_turbi_container">
+        <div class="addturbi">
+            <form id="modifica_turbi" action="{{ url_for('modifica_turbi') }}" method="POST">
+                <h2>Modifica Turbidimetro</h2>
+
+                <div id="errore_modifica" style="color: red; margin-bottom: 20px;"></div>
+
+                <label for="id">Turbi ID</label>
+                <input type="text" name="turbi_id" id="turbi_id" required placeholder="Inserisci l'id del turbi"><br><br>
+                
+                <label for="Latitudine">Latitudine</label><br>
+                <input type="text" name="Latitudine" id="Latitudine_M" required placeholder="Inserisci la latitudine"><br><br>
+    
+                <label for="Longitudine">Longitudine</label><br>
+                <input type="text" name="Longitudine" id="Longitudine_M" required placeholder="Inserisci la longitudine"><br><br>
+    
+                <input type="submit" value="Modifica">
+                <hr>
+            </form>
+        </div>
+        <div class="tabella">
+            <table id="table">
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>

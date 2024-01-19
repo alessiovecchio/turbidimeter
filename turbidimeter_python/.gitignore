@@ -1,0 +1,8 @@
+Server/server.key
+Server/server.crt
+Server/server.csr
+Server/turbiDB.sql
+Server/__pycache__
+Raspi/__pycache__
+Server/reminder.txt
+Raspi/venv
