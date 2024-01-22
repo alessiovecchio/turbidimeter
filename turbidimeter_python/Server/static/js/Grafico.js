@@ -145,6 +145,42 @@ document.addEventListener("DOMContentLoaded", function() {
                         }
                     }
                 });
+                //riempi le due tabelle con i dati ottenuti
+                var table = document.getElementById("table1");
+                table.innerHTML = "";
+                let sensor1=document.getElementById('sensor1');
+                let sensor3=document.getElementById('sensor3');
+                sensor1.setAttribute("style", "display: block;");
+                sensor3.setAttribute("style", "display: block;");
+                var row = table.insertRow(0);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                cell1.innerHTML = "Timestamp";
+                cell2.innerHTML = "Average";
+                cell1.style.fontWeight = "bold";
+                cell2.style.fontWeight = "bold";
+                for (var i = 0; i < jsonData.length; i++) {
+                    var row = table.insertRow(i + 1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    cell1.innerHTML = jsonData[i].timestamp;
+                    cell2.innerHTML = jsonData[i].average;
+                }
+                var table = document.getElementById("table2");
+                table.innerHTML = "";
+                var row = table.insertRow(0);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                cell1.innerHTML = "Timestamp";
+                cell2.innerHTML = "Average";
+                for (var i = 0; i < jsonData.length; i++) {
+                    var row = table.insertRow(i + 1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    cell1.innerHTML = jsonData[i].timestamp;
+                    cell2.innerHTML = jsonData[i].average;
+                }
+
             },
             error: function(error) {
                 console.log("errore nella richiesta per ottenere i dati");

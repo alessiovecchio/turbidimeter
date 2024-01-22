@@ -146,6 +146,7 @@ header {
 .container_data{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 60px;
 }
 
 .container_data_form{
@@ -244,6 +245,16 @@ header {
         font-weight: normal;
     }
 
-
-
-
+.table_container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: stretch;
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
+.table_container h3{
+    display: none;
+}
