@@ -173,6 +173,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 var cell2 = row.insertCell(1);
                 cell1.innerHTML = "Timestamp";
                 cell2.innerHTML = "Average";
+                cell1.style.fontWeight = "bold";
+                cell2.style.fontWeight = "bold";
                 for (var i = 0; i < jsonData.length; i++) {
                     var row = table.insertRow(i + 1);
                     var cell1 = row.insertCell(0);
