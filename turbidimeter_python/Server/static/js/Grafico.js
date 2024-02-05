@@ -52,10 +52,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById('errore_formato').innerHTML = "";
                 var jsonData = data;
 
-                
-                // Estrai timestamp e i valori
-                var timestamps = jsonData.map(entry => entry.timestamp);
-                var values = jsonData.map(entry => entry.average);
 
                 if (myChart1) {
                     myChart1.destroy();
@@ -155,32 +151,90 @@ document.addEventListener("DOMContentLoaded", function() {
                 var row = table.insertRow(0);
                 var cell1 = row.insertCell(0);
                 var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
+                var cell6 = row.insertCell(5);
+                var cell7 = row.insertCell(6);
                 cell1.innerHTML = "Timestamp";
-                cell2.innerHTML = "Average";
+                cell2.innerHTML = "VisibleON";
+                cell3.innerHTML = "VisibleOFF";
+                cell4.innerHTML = "fullSpcetrumON";
+                cell5.innerHTML = "fullSpectrumOFF";
+                cell6.innerHTML = "InfraredON";
+                cell7.innerHTML = "InfraredOFF";
                 cell1.style.fontWeight = "bold";
                 cell2.style.fontWeight = "bold";
+                cell4.style.fontWeight = "bold";
+                cell3.style.fontWeight = "bold";
+                cell5.style.fontWeight = "bold";
+                cell6.style.fontWeight = "bold";
+                cell7.style.fontWeight = "bold";
                 for (var i = 0; i < jsonData.length; i++) {
                     var row = table.insertRow(i + 1);
                     var cell1 = row.insertCell(0);
                     var cell2 = row.insertCell(1);
-                    cell1.innerHTML = jsonData[i].timestamp;
-                    cell2.innerHTML = jsonData[i].average;
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+                    var cell6 = row.insertCell(5);
+                    var cell7 = row.insertCell(6);
+
+                    if(jsonData[i].sensor=="1")
+                    {
+                        cell1.innerHTML = jsonData[i].timestamp;
+                        cell2.innerHTML = jsonData[i].visibleON;
+                        cell3.innerHTML = jsonData[i].visibleOFF;
+                        cell4.innerHTML = jsonData[i].fullSpectrumON;
+                        cell5.innerHTML = jsonData[i].fullSpectrumOFF;
+                        cell6.innerHTML = jsonData[i].infraredON;
+                        cell7.innerHTML = jsonData[i].infraredOFF;
+                    }
                 }
                 var table = document.getElementById("table2");
                 table.innerHTML = "";
                 var row = table.insertRow(0);
                 var cell1 = row.insertCell(0);
                 var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                var cell5 = row.insertCell(4);
+                var cell6 = row.insertCell(5);
+                var cell7 = row.insertCell(6);
                 cell1.innerHTML = "Timestamp";
-                cell2.innerHTML = "Average";
+                cell2.innerHTML = "VisibleON";
+                cell3.innerHTML = "VisibleOFF";
+                cell4.innerHTML = "fullSpcetrumON";
+                cell5.innerHTML = "fullSpectrumOFF";
+                cell6.innerHTML = "InfraredON";
+                cell7.innerHTML = "InfraredOFF";
                 cell1.style.fontWeight = "bold";
                 cell2.style.fontWeight = "bold";
+                cell4.style.fontWeight = "bold";
+                cell3.style.fontWeight = "bold";
+                cell5.style.fontWeight = "bold";
+                cell6.style.fontWeight = "bold";
+                cell7.style.fontWeight = "bold";
+                sensor3.setAttribute("style", "display: block;");
                 for (var i = 0; i < jsonData.length; i++) {
                     var row = table.insertRow(i + 1);
                     var cell1 = row.insertCell(0);
                     var cell2 = row.insertCell(1);
-                    cell1.innerHTML = jsonData[i].timestamp;
-                    cell2.innerHTML = jsonData[i].average;
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+                    var cell6 = row.insertCell(5);
+                    var cell7 = row.insertCell(6);
+                    if(jsonData[i].sensor=="3")
+                    {
+                        cell1.innerHTML = jsonData[i].timestamp;
+                        cell2.innerHTML = jsonData[i].visibleON;
+                        cell3.innerHTML = jsonData[i].visibleOFF;
+                        cell4.innerHTML = jsonData[i].fullSpectrumON;
+                        cell5.innerHTML = jsonData[i].fullSpectrumOFF;
+                        cell6.innerHTML = jsonData[i].infraredON;
+                        cell7.innerHTML = jsonData[i].infraredOFF;
+                    }
                 }
 
             },

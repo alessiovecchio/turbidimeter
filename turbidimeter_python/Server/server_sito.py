@@ -82,15 +82,8 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('home'))
             
-@app.route("/values")
-def values():
-    #render template
-    query="SELECT voltage FROM voltage"
-    cursor.execute(query)
-    result=cursor.fetchall()
-    return str(result)
 
-
+#Rotta per la pagina principale
 @app.route("/index") 
 def index():
     if 'username' in session:
@@ -154,6 +147,8 @@ def dati():
 #Rotta per il grafico dei dati
 
 
+from flask import jsonify
+
 @app.route('/get_data', methods=['POST'])
 def get_data():
     if 'username' in session:
@@ -169,17 +164,29 @@ def get_data():
                 timestamp = record[0]  # Assume che il timestamp sia la prima colonna
                 sensor = record[1]
                 values = record[2:]
-                average = sum(values) / (len(values) * 100)
+                average = sum(values) / len(values)
 
-                # Converti il timestamp in stringa prima di aggiungerlo all'oggetto JSON
+                # Conversione il timestamp in stringa prima di aggiungerlo all'oggetto JSON
                 timestamp_str = timestamp.strftime("%Y-%m-%d %H:%M:%S")
-                averaged_result.append({'timestamp': timestamp_str, 'sensor': sensor, 'average': average})
+
+                averaged_result.append({
+                    'timestamp': timestamp_str,
+                    'sensor': sensor,
+                    'average': average,
+                    'infraredOFF': values[0],
+                    'visibleOFF': values[1],
+                    'fullSpectrumOFF': values[2],
+                    'infraredON': values[3],
+                    'visibleON': values[4],
+                    'fullSpectrumON': values[5]
+                })
 
             return jsonify(averaged_result)
        else:
             return "Nessun dato presente"
     else:
         return redirect(url_for('home'))
+
     
 
 #Rotta per la pagina di modifica dei turbidimetri
