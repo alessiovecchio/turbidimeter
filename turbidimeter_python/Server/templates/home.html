@@ -11,10 +11,10 @@
             <div class="container_home">
                 <h1>Home Page</h1>
                 {%if username%}
-                <p>Hello {{username}}! You are already logged in, <a href="{{ url_for('logout')}}">Logout</a></p>
+                <p>Ciao {{username}}! Sei hai effettuato il login,torna alla pagina  <a href="{{ url_for('index')}}">principale</a> ,oppure fai <a href="{{ url_for('logout')}}">Logout</a></p>
                 {%else%}
-                <p>Hello! You are not logged in, Please <a href="{{ url_for('login') }}">Login</a> to access the home page or
-                <a href="{{ url_for('register') }}">Register</a> to create an account</p>
+                <p>Ciao! Non sei loggato su questa pagina, perfavore fai <a href="{{ url_for('login') }}">Login</a> per accedere alla home page o
+                <a href="{{ url_for('register') }}">Registrati</a> per creare un account</p>
                 {%endif%}
             </div>
     </div>
