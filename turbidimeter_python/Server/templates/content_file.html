@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valori</title>
+    <style>
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #334;
+        }
+    </style>
+</head>
+<body>
+    <h1>Valori delle misure</h1>
+    <p>Benvenuto, {{ username }}!, ecco i dati.</p>
+    <pre>{{ file_content }}</pre>
+    <!-- Bottone per tornare alla pagina principale -->
+    <a href="{{ url_for('index') }}" class="btn">Torna alla pagina principale</a>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Values</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .file-icon::before {
+            content: "\1F4C4";
+            margin-right: 5px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista dei File nella Cartella</h1>
+    <ul>
+        {% for file in files %}
+            <li>
+                <span class="file-icon"></span>
+                <a href="Server/values/{{ file }}">{{ file }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <!-- Bottone per tornare alla pagina principale -->
+    <a href="{{ url_for('index') }}" class="btn">Torna alla pagina principale</a>
+</body>
+</html>

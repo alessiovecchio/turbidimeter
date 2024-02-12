@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misure</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .folder-icon::before {
+            content: "\1F4C1";
+            margin-right: 5px;
+        }
+        .file-icon::before {
+            content: "\1F4C4";
+            margin-right: 5px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #334;
+        }
+    </style>
+</head>
+<body>
+    <h1>File delle misurazioni {{ current_path }}</h1>
+    <ul>
+        {% for item in items %}
+        <li>
+            {% if item|slice(-1) == '/' %}
+                <span class="folder-icon"></span>
+                <a href="{{ url_for('get_file_or_directory', directory_name=current_path + '/' + item) }}">{{ item }}</a>
+            {% else %}
+                <span class="file-icon"></span>
+                <a href="{{ url_for('get_file_or_directory', directory_name=current_path + '/' + item) }}">{{ item }}</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <!-- Bottone per tornare alla pagina precedente -->
+    <a href="javascript:window.history.back()" class="btn">Torna alla pagina precedente</a>
+</body>
+</html>

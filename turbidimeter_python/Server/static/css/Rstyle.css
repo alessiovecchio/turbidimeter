@@ -43,13 +43,13 @@ body {
   }
   
   input[type="submit"] {
-    background-color: #3498db;
+    background-color: #333;
     color: #ffffff;
     cursor: pointer;
   }
   
   input[type="submit"]:hover {
-    background-color: #2980b9;
+    background-color: #333;
   }
   
   p {

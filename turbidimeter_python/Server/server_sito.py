@@ -1,8 +1,9 @@
-from flask import Flask, render_template, session, request, redirect, url_for,jsonify
+from flask import Flask, render_template, session, request, redirect, url_for,jsonify,send_from_directory
 from datetime import datetime 
 import mysql.connector
 import json
 import mysql
+import os
 import hashlib
 #creo un'istanza di Flask
 app= Flask(__name__)
@@ -18,10 +19,6 @@ db_config = {
     'database': 'turbidimeterDB',
     'auth_plugin': 'caching_sha2_password'
 }
-
-#definisci una variabile visibile globalmente
-
-
 
 #Creo un oggetto di tipo connection, che prende come argomento un dizionario
 conn=mysql.connector.connect(**db_config)
@@ -144,11 +141,6 @@ def dati():
         
 
 
-#Rotta per il grafico dei dati
-
-
-from flask import jsonify
-
 @app.route('/get_data', methods=['POST'])
 def get_data():
     if 'username' in session:
@@ -187,7 +179,41 @@ def get_data():
     else:
         return redirect(url_for('home'))
 
-    
+#Rotte per il dispositivo mobile
+@app.route('/values', methods=['GET'])
+def values():
+    if 'username' in session:
+        # Lista per memorizzare tutti i file trovati
+        all_files = []
+
+       #mostra le directory presenti nella cartella values, senza costruire tutto il percorso
+        for directory in os.listdir('values'):
+            all_files.append(directory)
+       
+        # Passa la lista dei file al template HTML
+        return render_template('values.html', files=all_files, username=session['username'])
+    else:
+        return render_template('home.html')
+
+
+@app.route('/Server/values/<path:directory_name>', methods=['GET'])
+def get_file_or_directory(directory_name):
+    if 'username' in session:
+        full_path = os.path.join('values', directory_name)
+        all_items = []
+        
+        if os.path.isdir(full_path):
+            for item in os.listdir(full_path):
+                all_items.append(item)
+            return render_template('content_dir.html', items=all_items, username=session['username'], current_path=directory_name)
+        else:
+            with open(full_path, 'r', encoding='utf-8') as file:
+                    file_cont = file.read()
+                    return render_template('content_file.html',username=session['username'],file_content=file_cont)    
+    else:
+        return render_template('home.html')
+
+ 
 
 #Rotta per la pagina di modifica dei turbidimetri
 @app.route('/modifica_turbi', methods=['POST'])
