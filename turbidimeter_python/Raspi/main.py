@@ -9,7 +9,7 @@ from requests.exceptions import RequestException
 from waveshare_TSL2591 import TSL2591
 
 
-URL="https://131.114.23.178:5000"
+URL="https://131.114.23.178:5001"
 
 # Leggi la configurazione da config.json
 with open('conf.json', 'r') as config_file:

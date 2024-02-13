@@ -1,4 +1,5 @@
 #!/bin/bash
 
-timedatectl set-ntp true
-python3 main.py
+hostname -I > ip.txt
+python3 main2.py
+./sync.sh
