@@ -177,13 +177,13 @@ while sampling < numberOfSampling:
 
 
 
-        file = open("ip.txt", "r") 
-        ip = file.readline()
+        file = open("voltage.txt", "r") 
+        voltage = file.readline()
         file.close()            
         file = open(filename, "w")
         file.write(str(infraredOFF1) + ' ' + str(visibleOFF1) + ' ' + str(fullSpectrumOFF1) + ' ' + str(infraredON1) + ' ' + str(visibleON1) + ' ' + str(fullSpectrumON1))
         file.write(str(infraredOFF3) + ' ' + str(visibleOFF3) + ' ' + str(fullSpectrumOFF3) + ' ' + str(infraredON3) + ' ' + str(visibleON3) + ' ' + str(fullSpectrumON3) + ' ')
-        file.write(str(ip))
+        file.write(str(voltage))
             
         if mobile == "True": 
                 div = position.split(":")

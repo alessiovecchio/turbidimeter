@@ -6,3 +6,5 @@ Server/__pycache__
 Raspi/__pycache__
 Server/reminder.txt
 Raspi/schedule.py
+Raspi/__init__.py
+Raspi/vecchia_versione
