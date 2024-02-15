@@ -11,6 +11,11 @@ echo "Id turbidimetro: $turbidimeterID"
 
 sudo cp /home/$user/.ssh/known_hosts /root/.ssh
 LC_ALL=C sshpass -p  $password rsync -avz  --delete --update --itemize-changes "/home/"$user"/Desktop/progetto/values/"$turbidimeterID  $userServer"@"$ipAddr":/opt/lampp/htdocs/"$siteName"/values/"
+
+LC_ALL=C sshpass -p  "$password" rsync -avz "$userServer"@"$ipAddr":/home/alessio/Progetto_Schiano/"$siteName"/Server/sch.wpi /home/pi/wittypi/schedule.wpi" 
+
+LC_ALL=C sshpass -p  "$password" rsync -avz "$userServer"@"$ipAddr":/home/alessio/Progetto_Schiano/"$siteName"/Server/config.ini /home/pi/Desktop/progetto/Gianlu/Raspi/config.ini"
+
 #LC_ALL=C -p  $password rsync -avz --delete --update --itemize-changes "/home/pi/Desktop/progetto/values/1"  "alessio@131.114.23.178:/opt/lampp/htdocs/turbidimeter/values/"
 #LC_ALL=C rsync -avz --delete --update --itemize-changes --no-t "/home/pi/Desktop/progetto/values/1"  "alessio@131.114.23.178:/opt/lampp/htdocs/turbidimeter/values/"
 

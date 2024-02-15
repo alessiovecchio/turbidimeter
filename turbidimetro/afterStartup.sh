@@ -22,5 +22,7 @@ dir=/home/$user/wittypi
 echo $(get_input_voltage) > /home/$user/Desktop/progetto/voltage.txt
 cd /home/$user/Desktop/progetto/
 ./startTurbi.sh 
+cd ../../wittypi
+./runScript.sh
 echo $(synchronize_with_network_time)
 sudo shutdown -h now
