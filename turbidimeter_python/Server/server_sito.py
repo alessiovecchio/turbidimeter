@@ -84,6 +84,8 @@ def logout():
 @app.route("/index") 
 def index():
     if 'username' in session:
+        #manda in esecuzione turbi_values_sync.py
+        os.system('python3 turbi_values_sync.py')
         return render_template('index.html', username=session['username'])
     else:
         return redirect(url_for('home'))
