@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     data: {
                         labels: timestamps1,
                         datasets: [{
-                            label: 'Sensor 1 - Average',
+                            label: 'Sensor 90 - Average',
                             data: values1,
                             borderColor: 'rgba(75, 192, 192, 1)',
                             borderWidth: 1,
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     data: {
                         labels: timestamps2,
                         datasets: [{
-                            label: 'Sensor 3 - Average',
+                            label: 'Sensor 135 - Average',
                             data: values2,
                             borderColor: 'rgba(75, 192, 192, 1)',
                             borderWidth: 1,

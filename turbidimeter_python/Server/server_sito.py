@@ -158,7 +158,7 @@ def get_data():
                 timestamp = record[0]  # Assume che il timestamp sia la prima colonna
                 sensor = record[1]
                 values = record[2:]
-                average = sum(values) / len(values)
+                average = sum(values) / (100*len(values))
 
                 # Conversione il timestamp in stringa prima di aggiungerlo all'oggetto JSON
                 timestamp_str = timestamp.strftime("%Y-%m-%d %H:%M:%S")
