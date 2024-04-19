@@ -25,4 +25,4 @@ cd /home/$user/Desktop/progetto/
 cd ../../wittypi
 ./runScript.sh
 echo $(synchronize_with_network_time)
-sudo shutdown -h now
+
