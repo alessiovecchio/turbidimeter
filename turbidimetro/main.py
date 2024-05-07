@@ -61,14 +61,30 @@ while sampling < numberOfSampling:
         sensor1.TSL2591_SET_LuxInterrupt(50, 200)
         sensor3.TSL2591_SET_LuxInterrupt(50, 200)
 		
-        infraredOFF1 = sensor1.Read_Infrared
-        infraredOFF3 = sensor3.Read_Infrared
+        sensor1.Enable()
+        Channel0OFF1 = sensor1.Read_CHAN0()
+        sensor1.Disable()
+
+        sensor3.Enable()
+        Channel0OFF3 = sensor3.Read_CHAN0()
+        sensor3.Disable()
+
+        sensor1.Enable()
+        Channel1OFF1 = sensor1.Read_CHAN1()
+        sensor1.Disable()
+
+        sensor3.Enable()
+        Channel1OFF3 = sensor3.Read_CHAN1()
+        sensor3.Disable()
         
-        visibleOFF1 = sensor1.Read_Visible
-        visibleOFF3 = sensor3.Read_Visible
+#        infraredOFF1 = sensor1.Read_Infrared
+#        infraredOFF3 = sensor3.Read_Infrared
         
-        fullSpectrumOFF1 = sensor1.Read_FullSpectrum
-        fullSpectrumOFF3 = sensor3.Read_FullSpectrum
+#       visibleOFF1 = sensor1.Read_Visible
+#        visibleOFF3 = sensor3.Read_Visible
+        
+#        fullSpectrumOFF1 = sensor1.Read_FullSpectrum
+#        fullSpectrumOFF3 = sensor3.Read_FullSpectrum
 		
         led.on()
         time.sleep(5)
@@ -78,14 +94,30 @@ while sampling < numberOfSampling:
         sensor1.TSL2591_SET_LuxInterrupt(50, 200)
         sensor3.TSL2591_SET_LuxInterrupt(50, 200)
         
-        infraredON1 = sensor1.Read_Infrared
-        infraredON3 = sensor3.Read_Infrared
+        sensor1.Enable()
+        Channel0ON1 = sensor1.Read_CHAN0()
+        sensor1.Disable()
         
-        visibleON1 = sensor1.Read_Visible
-        visibleON3 = sensor3.Read_Visible
+        sensor3.Enable()
+        Channel0ON3 = sensor3.Read_CHAN0()
+        sensor3.Disable()
         
-        fullSpectrumON1 = sensor1.Read_FullSpectrum
-        fullSpectrumON3 = sensor3.Read_FullSpectrum
+        sensor1.Enable()
+        Channel1ON1 = sensor1.Read_CHAN1()
+        sensor1.Disable()
+        
+        sensor3.Enable()
+        Channel1ON3 = sensor3.Read_CHAN1()
+        sensor3.Disable()
+        
+ #       infraredON1 = sensor1.Read_Infrared
+ #       infraredON3 = sensor3.Read_Infrared
+        
+ #       visibleON1 = sensor1.Read_Visible
+ #       visibleON3 = sensor3.Read_Visible
+        
+ #       fullSpectrumON1 = sensor1.Read_FullSpectrum
+ #       fullSpectrumON3 = sensor3.Read_FullSpectrum
 
         if not os.path.exists("values"):
             os.makedirs("values")
@@ -100,8 +132,8 @@ while sampling < numberOfSampling:
         current_time = time.strftime("%H-%M-%S")
         filename = "values/" + turbidimeterID + "/" + current_date + "/" + "val" + current_time + ".txt"
         
-        print('%d'%infraredON1)
-        print('%d'%infraredON3)
+ #       print('%d'%infraredON1)
+ #       print('%d'%infraredON3)
         
         if mobile == "True":
                 print("prelevo la posizione del dispositivo")
@@ -127,8 +159,8 @@ while sampling < numberOfSampling:
         voltage = file.readline()
         file.close()            
         file = open(filename, "w")
-        file.write(str(infraredOFF1) + ' ' + str(visibleOFF1) + ' ' + str(fullSpectrumOFF1) + ' ' + str(infraredON1) + ' ' + str(visibleON1) + ' ' + str(fullSpectrumON1))
-        file.write(str(infraredOFF3) + ' ' + str(visibleOFF3) + ' ' + str(fullSpectrumOFF3) + ' ' + str(infraredON3) + ' ' + str(visibleON3) + ' ' + str(fullSpectrumON3) + ' ')
+        file.write(str(Channel0OFF1) + ' ' + str(Channel1OFF1) + ' ' + str(Channel0ON1) + ' ' + str(Channel1ON1) + ' ' )
+        file.write(str(Channel0OFF3) + ' ' + str(Channel1OFF3) + ' ' + str(Channel0ON3) + ' ' + str(Channel1ON3) + ' ' )
         file.write(str(voltage))
             
         if mobile == "True": 
