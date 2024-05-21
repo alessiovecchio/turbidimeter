@@ -13,10 +13,10 @@ app.secret_key="root1234"
 
 #Creo un dizionario che contiene i parametri per la connessione al database
 db_config = {
-    'host': 'localhost',
+    'unix_socket': '/opt/lampp/var/mysql/mysql.sock',
     'user': 'root',
     'password': 'root1234', #password del database
-    'database': 'turbidimeterDB',
+    'database': 'turbidimeterdb',
     'auth_plugin': 'caching_sha2_password'
 }
 
@@ -84,7 +84,6 @@ def logout():
 @app.route("/index") 
 def index():
     if 'username' in session:
-        #manda in esecuzione turbi_values_sync.py
         os.system('python3 turbi_values_sync.py')
         return render_template('index.html', username=session['username'])
     else:
@@ -191,6 +190,7 @@ def values():
        #mostra le directory presenti nella cartella values, senza costruire tutto il percorso
         for directory in os.listdir('values'):
             all_files.append(directory)
+            all_files.sort()
        
         # Passa la lista dei file al template HTML
         return render_template('values.html', files=all_files, username=session['username'])
@@ -207,6 +207,7 @@ def get_file_or_directory(directory_name):
         if os.path.isdir(full_path):
             for item in os.listdir(full_path):
                 all_items.append(item)
+                all_items.sort()
             return render_template('content_dir.html', items=all_items, username=session['username'], current_path=directory_name)
         else:
             with open(full_path, 'r', encoding='utf-8') as file:
