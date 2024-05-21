@@ -16,6 +16,8 @@ print(libdir)
 import logging
 from waveshare_TSL2591 import TSL2591
 
+MAX_AGAIN           = (0x30)#Max gain (9876x)
+
 def send_command(command):
 	rec_buffer = ''
 	ser.write((command + "\r\n").encode())
@@ -58,24 +60,29 @@ while sampling < numberOfSampling:
 	
         sensor1.Lux
         sensor3.Lux	
-        sensor1.TSL2591_SET_LuxInterrupt(50, 200)
-        sensor3.TSL2591_SET_LuxInterrupt(50, 200)
-		
+       # sensor1.TSL2591_SET_LuxInterrupt(50, 200)
+       # sensor3.TSL2591_SET_LuxInterrupt(50, 200)
+
         sensor1.Enable()
-        Channel0OFF1 = sensor1.Read_CHAN0()
+        sensor1.Set_Gain(MAX_AGAIN)
         sensor1.Disable()
 
         sensor3.Enable()
-        Channel0OFF3 = sensor3.Read_CHAN0()
+        sensor3.Set_Gain(MAX_AGAIN)
         sensor3.Disable()
-
+	
+        #time.sleep(1)
+	
         sensor1.Enable()
+        Channel0OFF1 = sensor1.Read_CHAN0()
         Channel1OFF1 = sensor1.Read_CHAN1()
         sensor1.Disable()
 
         sensor3.Enable()
+        Channel0OFF3 = sensor3.Read_CHAN0()
         Channel1OFF3 = sensor3.Read_CHAN1()
         sensor3.Disable()
+
         
 #        infraredOFF1 = sensor1.Read_Infrared
 #        infraredOFF3 = sensor3.Read_Infrared
@@ -91,24 +98,31 @@ while sampling < numberOfSampling:
 	
         sensor1.Lux
         sensor3.Lux	
-        sensor1.TSL2591_SET_LuxInterrupt(50, 200)
-        sensor3.TSL2591_SET_LuxInterrupt(50, 200)
-        
+       # sensor1.TSL2591_SET_LuxInterrupt(50, 200)
+       # sensor3.TSL2591_SET_LuxInterrupt(50, 200)
+
         sensor1.Enable()
-        Channel0ON1 = sensor1.Read_CHAN0()
+        sensor1.Set_Gain(MAX_AGAIN)
         sensor1.Disable()
-        
+
         sensor3.Enable()
-        Channel0ON3 = sensor3.Read_CHAN0()
+        sensor3.Set_Gain(MAX_AGAIN)
         sensor3.Disable()
         
+        #time.sleep(1)
+
         sensor1.Enable()
+        Channel0ON1 = sensor1.Read_CHAN0()
         Channel1ON1 = sensor1.Read_CHAN1()
         sensor1.Disable()
         
         sensor3.Enable()
+        Channel0ON3 = sensor3.Read_CHAN0()
         Channel1ON3 = sensor3.Read_CHAN1()
         sensor3.Disable()
+
+        led.off()
+
         
  #       infraredON1 = sensor1.Read_Infrared
  #       infraredON3 = sensor3.Read_Infrared
