@@ -5,7 +5,7 @@ user=$(awk -F'=' '/\[general\]/{flag=1; next} /\[.*\]/{flag=0} flag && $1=="user
 echo "#--------WELCOME TO TURBIDIMETER SYSTEM--------#" 
 echo "Necessary library installation and information in progress"
 
-cd /home/$user/Desktop/progetto
+cd /home/$user/Desktop/turbidimeter
 sudo apt install sshpass
 ./makePasswordRsync.sh
 
@@ -45,7 +45,7 @@ echo "Install sensor library"
 
 
 echo "Copy startup program in the wittypi AfterStartup script"
-sudo cp /home/$user/Desktop/progetto/afterStartup.sh /home/$user/wittypi/afterStartup.sh
+sudo cp /home/$user/Desktop/turbidimeter/afterStartup.sh /home/$user/wittypi/afterStartup.sh
 
 echo "please, reboot the system"
 sleep 5
