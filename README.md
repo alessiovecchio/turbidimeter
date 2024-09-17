@@ -19,11 +19,11 @@ The directory turbidimeter contains the code that will be deployed on the Raspbe
 
 The directory Server contains the elements required to start the server to collect the data from the different sensors.
 
-## Raspberry installation instruction
+## Raspberry installation instructions
 
-These steps should be performed after buying and mounting the Raspberry Pi Zero WH with the Witty Pi board, the photodetectors and the LED emitter. For a schema of the Pin connection you can refer to the paper "".
+These steps should be performed after buying and mounting the Raspberry Pi Zero WH with the Witty Pi 4 L3V7, the photodetectors and the LED emitter. For a schema of the Pins' connection you can refer to the paper "".
 
-* 1 Install the Raspbian OS on the micro Sim deployed on the board.
+* 1 Install the Raspbian OS on the microSD deployed on the board.
   - The default user for the Raspberry Pi is "pi".
 * 2 Download the turbidimeter directory on the Desktop of the user pi of the Raspberry. 
 * 3 Launch the welcomeTurbi.sh script to automatically download the required libraries for managing the Witty Pi board, following the instructions provided on screen.
@@ -33,6 +33,6 @@ These steps should be performed after buying and mounting the Raspberry Pi Zero 
   - Set the ipAddr with the IP address of your server.
   - Set userServer with the name of your user on the server.
 * 5 Set the desired Wittypi schedule, changing the file /home/pi/wittypi/schedule.wpi
-  - The syntax of this file is shown in the referenced paper and is also available on the [manual of wittypi](https://cdn-shop.adafruit.com/product-files/5705/WittyPi4L3V7_UserManual.pdf)  
+  - The syntax of this file is shown in the referenced paper. More details are available on the [manual of wittypi](https://cdn-shop.adafruit.com/product-files/5705/WittyPi4L3V7_UserManual.pdf)  
 
-  In case of errors or malfunction you can write to maurizio.palmieriATunipi.it for clarification.
+  In case of errors you can write to maurizio.palmieriATunipi.it for clarification.
