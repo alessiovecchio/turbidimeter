@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Avvia il server con HTTPS
-export FLASK_APP=server_sito.py
+# start the server with HTTPS
+export FLASK_APP=server_site.py
 export FLASK_KEY=server.key
 export FLASK_CERT=server.crt
 export FLASK_RUN_PORT=5001
