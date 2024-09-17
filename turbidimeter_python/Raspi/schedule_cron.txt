@@ -1,3 +1,0 @@
-0 */3 * * *  /home/pi/Desktop/progetto/Gianlu/Raspi/ ./run.sh >> /home/pi/Desktop/progetto/Gianlu/Raspi/error.log 2>&1
-
-*/15 1-23/3 * * *  /home/pi/Desktop/progetto/Gianlu/Raspi/ ./run.sh >> /home/pi/Desktop/progetto/Gianlu/Raspi/error.log 2>&1
