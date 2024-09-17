@@ -32,3 +32,7 @@ These steps should be performed after buying and mounting the Raspberry Pi Zero 
   - Set the turbidimeterID with a number that identifies your turbidimeter.
   - Set the ipAddr with the IP address of your server.
   - Set userServer with the name of your user on the server.
+* 5 Set the desired Wittypi schedule, changing the file /home/pi/wittypi/schedule.wpi
+  - The syntax of this file is shown in the referenced paper and is also available on the [manual of wittypi](https://cdn-shop.adafruit.com/product-files/5705/WittyPi4L3V7_UserManual.pdf)  
+
+  In case of errors or malfunction you can write to maurizio.palmieriATunipi.it for clarification.
