@@ -25,9 +25,10 @@ These steps should be performed after buying and mounting the Raspberry Pi Zero 
 
 * 1 Install the Raspbian OS on the micro Sim deployed on the board.
   - The default user for the Raspberry Pi is "pi".
-* 2 Download the turbidimeter folder on the Desktop of the user. 
+* 2 Download the turbidimeter directory on the Desktop of the user pi of the Raspberry. 
 * 3 Launch the welcomeTurbi.sh script to automatically download the required libraries for managing the Witty Pi board, following the instructions provided on screen.
+  - When prompted, insert the password used to login on the remote server. It will be encrypted and stored on the board.
 * 4 Change the config.ini file adding data related to your system:
   - Set the turbidimeterID with a number that identifies your turbidimeter.
-  - Set the ipAddr with the Ip of your server.
+  - Set the ipAddr with the IP address of your server.
   - Set userServer with the name of your user on the server.
