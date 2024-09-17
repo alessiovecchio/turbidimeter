@@ -6,9 +6,9 @@ import mysql.connector
 
 db_config = {
     'unix_socket': '/opt/lampp/var/mysql/mysql.sock',
-    'user': 'root',
-    'password': 'root1234', #password del database
-    'database': 'turbidimeterdb',
+    'user': '', # user of the database
+    'password': '', # password of the database
+    'database': '', # name of the database
     'auth_plugin': 'caching_sha2_password'
 }
 
