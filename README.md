@@ -1,4 +1,4 @@
-# turbidimeter
+# Turbidimeter
 A low-cost, smart, and multi-configuration turbidimeter.
 The turbidimeter is implemented using a raspberry pi zero plus some additional hardware that depends on the specific configuration. 
 
