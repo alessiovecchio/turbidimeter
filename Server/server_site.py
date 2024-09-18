@@ -8,15 +8,13 @@ import hashlib
 #creo un'istanza di Flask
 app= Flask(__name__)
 
-#definisco una chiave segreta per la sessione
-app.secret_key="root1234"
 
 #Creo un dizionario che contiene i parametri per la connessione al database
 db_config = {
-    'unix_socket': '/opt/lampp/var/mysql/mysql.sock',
-    'user': 'root',
-    'password': 'root1234', #password del database
-    'database': 'turbidimeterdb',
+    'unix_socket': '', # path to the mysql socket
+    'user': '', # user of the database
+    'password': '', # password of the database
+    'database': '', # name of the database
     'auth_plugin': 'caching_sha2_password'
 }
 
