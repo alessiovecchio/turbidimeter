@@ -39,7 +39,7 @@ These steps should be performed after buying and mounting the Raspberry Pi Zero 
   - The syntax of this file is shown in the referenced paper. More details are available on the [manual of wittypi](https://cdn-shop.adafruit.com/product-files/5705/WittyPi4L3V7_UserManual.pdf)  
 
 ## Example of config.ini
-The following part shows an example of the file config.ini, where the turbidimeter ID is 1, the server IP is 192.168.237.25 and the name of the user on the server is Maurizio. The turbidimeter performs 5 samplings every time the device turns on ( because numberOfSampling = 5), with an interval of 1 second between each sampling (because dataReadUnterval=1). The wait parameter is only significant when mobile is True and represents the time (in seconds) waited to acquire the location. Laboratory tests suggest that roughly 60 seconds are usually required but different locations can require different values.
+The following part shows an example of the file config.ini, where the turbidimeter ID is 1, the server IP is 192.168.237.25 and the name of the user on the server is Maurizio. The turbidimeter performs 5 samplings every time the device turns on ( because numberOfSampling = 5), with an interval of 1 second between each sampling (because dataReadUnterval=1). The wait parameter is only significant when mobile is True and represents the time (in seconds) waited to acquire the location. Laboratory tests suggest that roughly 60 seconds are required.
 
 [general]
 
