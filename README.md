@@ -42,19 +42,29 @@ These steps should be performed after buying and mounting the Raspberry Pi Zero 
 The following part shows an example of the file config.ini, where the turbidimeter ID is 1, the server Ip is 192.168.237.25 and the name of the user on the server is Maurizio.
 
 [general]
+
 user=pi
 
 [turbidimeter]
+
 turbidimeterID=1
+
 dataReadInterval=1
+
 numberOfSampling=5
+
 mobile=False
+
 wait=60
 
 [server]
+
 ipAddr= 192.168.237.25 
+
 userServer= Maurizio
+
 siteName = turbidimeter_python
+
 
 ## Further help
   In case of errors you can write to maurizio.palmieriATunipi.it for help.
