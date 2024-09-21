@@ -21,7 +21,7 @@ if [ ${addr} -eq 0 ]; then
 	echo "connecting..."
 	python3 sendATCommands.py AT\$QCRMCALL=1,1
 
-	#udhcpc -i wwan0
+	udhcpc -i wwan0
 	sleep 2
 fi
 ifconfig
