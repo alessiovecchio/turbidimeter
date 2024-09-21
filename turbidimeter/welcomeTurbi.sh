@@ -35,7 +35,9 @@ echo "Install sensor library"
  sudo make install
 
  cd /home/$user/
-
+ 
+ sudo apt-get install udhcpc
+ 
  sudo apt-get install wiringpi
   #For Raspberry Pi 4B, an upgrade may be required:
   cd /tmp
