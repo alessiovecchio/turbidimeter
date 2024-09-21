@@ -7,7 +7,7 @@ echo "#------the turbidimeter turns on------#"
 echo "#--------Start of turbidimeter activities-------#"
 
 echo "I take water turbidity measurements"
-sudo nmcli radio wifi on
+# sudo nmcli radio wifi on
 if test $mobile = "True"  
  then
   echo "mobile turdimeter"
@@ -25,5 +25,9 @@ fi
 rm voltage.txt
 sleep 10
 ./sync.sh
+
+# echo "#-enable wifi for debug-#"
+# sudo nmcli radio wifi on
+# sudo ifconfig wlan0 up
 echo "#--------End of turbidimeter activities-------#"
 echo "#------the turbidimeter will soon shut down------#" 
