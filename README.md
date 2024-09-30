@@ -1,8 +1,14 @@
 # Turbidimeter
+
+<img src="https://github.com/alessiovecchio/turbidimeter/blob/main/images/prototype.jpg" width="500" height="836" />
+
 A low-cost, smart, and multi-configuration turbidimeter.
 The turbidimeter is implemented using a raspberry pi zero plus some additional hardware that depends on the specific configuration. 
 
 The mobile version is battery-operated and relies on a Witty Pi to turn on/off the Raspberry board, in order to save energy.
+The battery within the device can be recharged without opening it thanks to a wireless power receiver placed internally, glued to the
+bottom of the tube. In the image above, the green light on the charging station shows that the battery is charging.
+
 The mobile version can communicate with the Internet 
  - via Wi-Fi
  - using a cellular connection
@@ -21,6 +27,10 @@ The server side allows to configure the turbidimeter in terms of on/off times al
 The directory turbidimeter contains the code that will be deployed on the Raspberry board.
 
 The directory Server contains the elements required to start the server to collect the data from the different sensors.
+
+The directory 3D-head contains the head.stl file for 3D printing the head of the turbidimeter along with an image of the printed object.
+
+The directory images contains the prototype image and the image of the 3D-printed head with the light sensors embedded within.
 
 ## Raspberry installation instructions
 
